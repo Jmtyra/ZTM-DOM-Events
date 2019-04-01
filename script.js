@@ -41,9 +41,14 @@ function keyEvent(event) {
 enterBtn.addEventListener("click", clickEvent);
 listField.addEventListener("keypress", keyEvent);
 
+// Here we are adding an event listener for clicking on the shopping list object "ul" which
+// also uses the shopping list array object "li" because we need to reference by array number
 shoppingList.addEventListener("click", function() {
+  // The minus 1 below is b/c an array starts at zero, not 1
   for (var i = event.path[1].children.length - 1; i >= 0; i--) {
+    // Interate through the whole "ul"; Does the text of the clicked "li" match the current "li"
     if (event.path[0].innerText === event.path[1].children[i].innerText) {
+      // if yes we toggle the "done" class, if not we do nothing and loop again
       shoppingListArray[i].classList.toggle("done");
       break;
     }
