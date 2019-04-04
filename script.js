@@ -37,6 +37,8 @@ function keyEvent(event) {
 }
 
 function taskDone() {
+  // test
+  shoppingListArray = document.querySelectorAll("li");
   // The minus 1 below is b/c an array starts at zero, not 1
   for (var i = event.path[1].children.length - 1; i >= 0; i--) {
     // Interate through the whole "ul"; Does the text of the clicked "li" match the current "li"
