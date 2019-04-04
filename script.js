@@ -21,7 +21,6 @@ function validInput() {
 }
 
 // Handling mouse click events
-// extra comment test
 function clickEvent() {
   if (validInput() > 0) {
     addToList();
