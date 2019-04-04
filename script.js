@@ -37,14 +37,14 @@ function keyEvent(event) {
 }
 
 function taskDone() {
-  // test
+  // Refresh the array of 'shopping list' elements aka "li" entries in case the user has
+  // added new items to the list
   shoppingListArray = document.querySelectorAll("li");
   // The minus 1 below is b/c an array starts at zero, not 1
   for (var i = event.path[1].children.length - 1; i >= 0; i--) {
     // Interate through the whole "ul"; Does the text of the clicked "li" match the current "li"
     if (event.path[0].innerText === event.path[1].children[i].innerText) {
       // if yes we toggle the "done" class, if not we do nothing and loop again
-      console.log(event); //debug
       shoppingListArray[i].classList.toggle("done");
       break;
     }
